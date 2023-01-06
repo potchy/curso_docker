@@ -12,7 +12,7 @@ RUN pip install pyodbc
 
 WORKDIR /app
 
-COPY . .
+COPY app.py .
 
 EXPOSE 5000
 

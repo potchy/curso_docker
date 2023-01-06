@@ -6,7 +6,6 @@ docker build --tag 3_com_containers.sql .
    
 docker run \
 	--name 3_com_containers.sql \
-	--hostname 3_com_containers.sql \
 	--env "ACCEPT_EULA=Y" \
 	--env "MSSQL_SA_PASSWORD=<YourStrong@Passw0rd>" \
 	--detach \

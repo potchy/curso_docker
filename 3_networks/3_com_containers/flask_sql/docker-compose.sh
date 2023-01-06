@@ -9,6 +9,7 @@ docker run \
     --detach \
     --publish 5000:5000 \
     --network 3_com_containers \
+    --volume /mnt/e/git/curso_docker/3_networks/3_com_containers/flask_sql:/app:ro \
     3_com_containers.flask_sql
 
 docker logs --follow 3_com_containers.flask_sql

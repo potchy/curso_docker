@@ -15,7 +15,7 @@ def postIndex():
     username = data["results"][0]["name"]["first"]
 
     # https://stackoverflow.com/questions/45934315/is-there-a-dispose-pattern-in-python
-    connection = pyodbc.connect("Driver={ODBC Driver 18 for SQL Server};Server=172.19.0.2,1433;Database=3_com_containers;UID=sa;PWD=<YourStrong@Passw0rd>;")
+    connection = pyodbc.connect("Driver={ODBC Driver 18 for SQL Server};Server=3_com_containers.sql,1433;Database=3_com_containers;UID=sa;PWD=<YourStrong@Passw0rd>;TrustServerCertificate=Yes;")
     cursor = connection.cursor()
     cursor.execute("INSERT INTO users(name) VALUES (?)", username)
     connection.commit()
