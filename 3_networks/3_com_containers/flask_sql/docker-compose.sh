@@ -1,3 +1,5 @@
+cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+
 docker rm --force 3_com_containers.flask_sql
 
 docker build --tag 3_com_containers.flask_sql .
