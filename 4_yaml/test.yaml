@@ -1,0 +1,11 @@
+# instruções para o programa
+nome: "Matheus"
+idade: 30 # esta é a idade do usuário
+
+# este objeto descreve o nosso projeto
+objeto:
+  versao: 2
+  arquivo: "teste.txt"
+
+versao: 2
+versao_completa: 3.14
