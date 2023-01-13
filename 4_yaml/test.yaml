@@ -9,3 +9,38 @@ objeto:
 
 versao: 2
 versao_completa: 3.14
+
+string_sem_aspas: Digite um texto aqui
+texto: "Este também é um texto válido para o YAML"
+
+nulo: ~
+nulo_dois: null
+
+verdadeiro: on
+verdadeiro_dois: true
+
+falso: off
+falso_dois: false
+
+lista: [1, 2, 3, 4, 5]
+lista_dois:
+  - "teste"
+  - 10
+  - outro teste
+  - true
+
+dicionario: {
+  a: 1,
+  b: 2,
+  c: 3,
+  objeto_interno: {
+    a: 1
+  }
+}
+
+dicionario_dois:
+  a: 1
+  b: 2
+  c: 3
+  objeto_interno:
+    a: 1
