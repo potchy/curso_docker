@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  db: #contêiner de MySQL
+    image: mysql:8
+    volumes:
+      - data:/var/lib/mysql
+    restart: always
+    env_file:
+      - ./config/db.env
+    networks:
+      - back-end
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:6
+    ports:
+      - "8000:80"
+    restart: always
+    env_file:
+      - ./config/wordpress.env
+    networks:
+      - back-end
+
+volumes:
+  data:
+
+networks:
+  back-end:
