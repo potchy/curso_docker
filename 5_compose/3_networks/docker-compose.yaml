@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  db: #contêiner de MySQL
+  db:
     image: mysql:8
     volumes:
       - data:/var/lib/mysql
