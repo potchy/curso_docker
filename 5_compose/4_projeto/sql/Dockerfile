@@ -11,6 +11,7 @@ COPY schema.sql .
 
 # Grant permissions for the import-data script to be executable
 RUN chmod +x entrypoint.sh
+RUN chmod +x schema.sh
 
 # Switch back to mssql user and run the entrypoint script
 USER mssql

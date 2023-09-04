@@ -3,30 +3,25 @@ version: "3.8"
 services:
   sql:
     image: sql
+    build: ./sql
     restart: always
     env_file:
       - ./env/sql.env
     ports:
-      - 5001:1433
-    networks:
-      - 4_projeto
+      - "5001:1433"
 
   flask_sql:
     image: flask_sql
+    build: ./flask_sql
+    restart: always
     depends_on:
       - sql
-    restart: always
     env_file:
       - ./env/flask_sql.env
     ports:
       - "5000:5000"
     volumes:
-      - /mnt/e/git/curso_docker/5_compose/4_projeto/flask_sql:/app:ro
-    networks:
-      - 4_projeto
+      - ./flask_sql/:/app:ro
 
 volumes:
   data:
-
-networks:
-  4_projeto:
