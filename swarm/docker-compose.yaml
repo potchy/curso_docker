@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: matheus
+      MYSQL_PASSWORD: secret
+    deploy:
+      placement:
+        constraints:
+          - node.id==pvmjlpalazc81a60oi72gfh0h
+
+  wordpress:
+    image: wordpress:6
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: matheus
+      WORDPRESS_DB_PASSWORD: secret
