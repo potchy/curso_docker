@@ -1,0 +1,18 @@
+# kubectl explain deployment
+apiVersion: "apps/v1" # GROUP/VERSION
+kind: "Deployment" # KIND
+metadata:
+  name: "hello-kubernetes-deployment"
+spec:
+  replicas: 3
+  selector: # define quais pods serão gerenciadas por esse deployment
+    matchLabels:
+      app: "hello-kubernetes" # tem que ser igual ao spec.template.metadata.labels
+  template: # do pod
+    metadata:
+      labels:
+        app: "hello-kubernetes" # tem que ser igual ao spec.selector.matchLabels
+    spec:
+      containers:
+        - name: "hello-kubernetes"
+          image: "potchy/hello-kubernetes"

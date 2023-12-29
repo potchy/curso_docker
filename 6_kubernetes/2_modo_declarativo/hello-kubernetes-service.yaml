@@ -1,0 +1,11 @@
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "hello-kubernetes-service"
+spec:
+  selector: # define quais pods receberão o tráfego do service
+    app: "hello-kubernetes" # tem que ser igual ao spec.template.metadata.labels do deployment
+  ports:
+    - port: 5000 # porta exposta pelo service
+      targetPort: 5000 # porta do container (opcional)
+  type: "LoadBalancer"
